@@ -18,13 +18,11 @@ public class Product implements Serializable {
     private Long id;
     private String name;
     private String description;
-    private double price;
+    private Double price;
     private String imgUrl;
 
     @ManyToMany
-    @JoinTable(name = "tb_product_category",
-            joinColumns = @JoinColumn(name = "product_id"),
-            inverseJoinColumns = @JoinColumn(name = "category_id"))
+    @JoinTable(name = "tb_product_category", joinColumns = @JoinColumn(name = "product_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))
     private Set<Category> categories = new HashSet<>();
 
     @OneToMany(mappedBy = "id.product")
@@ -33,14 +31,14 @@ public class Product implements Serializable {
     public Product() {
     }
 
-    public Product(Long id, String name, String description, double price, String imgUrl) {
+    public Product(Long id, String name, String description, Double price, String imgUrl) {
+        super();
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
         this.imgUrl = imgUrl;
     }
-
 
     public Long getId() {
         return id;
@@ -66,11 +64,11 @@ public class Product implements Serializable {
         this.description = description;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 

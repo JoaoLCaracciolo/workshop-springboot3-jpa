@@ -29,6 +29,7 @@ public class User implements Serializable {
     }
 
     public User(Long id, String name, String email, String phone, String password) {
+        super();
         this.id = id;
         this.name = name;
         this.email = email;
@@ -64,10 +65,6 @@ public class User implements Serializable {
         return phone;
     }
 
-    public List<Order> getOrders() {
-        return orders;
-    }
-
     public void setPhone(String phone) {
         this.phone = phone;
     }
@@ -78,6 +75,10 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
     }
 
     @Override

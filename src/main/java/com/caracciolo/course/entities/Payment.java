@@ -13,7 +13,8 @@ public class Payment implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private Instant moment;
 
     @JsonIgnore
@@ -25,6 +26,7 @@ public class Payment implements Serializable {
     }
 
     public Payment(Long id, Instant moment, Order order) {
+        super();
         this.id = id;
         this.moment = moment;
         this.order = order;
